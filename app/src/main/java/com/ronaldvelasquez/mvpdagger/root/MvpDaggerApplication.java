@@ -2,6 +2,7 @@ package com.ronaldvelasquez.mvpdagger.root;
 
 import android.app.Application;
 
+import com.ronaldvelasquez.mvpdagger.http.TwitchModule;
 import com.ronaldvelasquez.mvpdagger.login.LoginModule;
 
 public class MvpDaggerApplication extends Application {
@@ -14,6 +15,7 @@ public class MvpDaggerApplication extends Application {
         applicationComponent = DaggerApplicationComponent.builder()
                 .applicationModule(new ApplicationModule(this))
                 .loginModule(new LoginModule())
+                .twitchModule(new TwitchModule())
                 .build();
     }
 
